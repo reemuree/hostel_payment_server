@@ -91,14 +91,16 @@ const initiatePayment = async (req, res) => {
     );
 
     if (!data.checkout_url) {
-      return res.status(500).json({ error: "Failed to initiate payment" });
+      return res
+        .status(500)
+        .json({ error: "Failed to initiate payment", error });
     }
     payment.transactionId = tran_id;
     await payment.save();
     res.status(200).json({ payment_url: data.checkout_url });
   } catch (error) {
     console.error("Error initiating payment:", error);
-    res.status(500).json({ error: "Internal server error" });
+    res.status(500).json({ error: "Internal server error", error: error });
   }
 };
 
