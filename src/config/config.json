@@ -1,15 +1,15 @@
 {
   "development": {
-    "username": "rpistude_dev_rpi",
-    "password": "rpistude_dev_rpi",
-    "database": "rpistude_dev_rpi",
+    "username": "rpistude_new_master",
+    "password": "rpistude_new_master",
+    "database": "rpistude_new_master",
     "host": "103.148.14.131",
     "dialect": "mysql"
   },
   "test": {
-    "username": "rpistude_dev_rpi",
-    "password": "rpistude_dev_rpi",
-    "database": "rpistude_dev_rpi",
+    "username": "rpistude_new_master",
+    "password": "rpistude_new_master",
+    "database": "rpistude_new_master",
     "host": "103.148.14.131",
     "dialect": "mysql"
   },
