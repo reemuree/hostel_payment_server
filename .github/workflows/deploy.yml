@@ -17,6 +17,6 @@ jobs:
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:
           server: podma-bd-cp1.hostever.com
-          username: pay_server@pay-server.rpi.gov.bd
+          username: hostel_payments_server@pay-hostel-server.rpi.gov.bd	
           password: ${{ secrets.FTP_PASSWORD }}
           server-dir: /
