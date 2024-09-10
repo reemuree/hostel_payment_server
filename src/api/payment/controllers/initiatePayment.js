@@ -93,7 +93,7 @@ const initiatePayment = async (req, res) => {
     if (!data.checkout_url) {
       return res
         .status(500)
-        .json({ error: "Failed to initiate payment", error });
+        .json({ error: "Failed to initiate payment", data });
     }
     payment.transactionId = tran_id;
     await payment.save();
