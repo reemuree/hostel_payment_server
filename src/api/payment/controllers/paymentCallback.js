@@ -1,5 +1,5 @@
 const { CLIENT } = require("../../../config/defaults");
-const { StudentPayment } = require("../../../models");
+const { StudentPayment, all_student } = require("../../../models");
 require("dotenv").config();
 const axios = require("axios");
 
@@ -77,9 +77,16 @@ const paymentCallback = async (req, res) => {
     payment.payment_method = verificationData.method;
     payment.order_id = verificationData.invoice_no;
     payment.account_number = verificationData.card_number;
+    payment.updatedAt = new Date();
     await payment.save();
 
-    console.log("Payment Updated:", payment);
+    const student = await all_student.findOne({
+      where: {
+        present_education_roll: payment.studentId,
+      },
+    });
+    student.student_mobile_number = verificationData.phone_no;
+    await student.save();
 
     // Send SMS notification
     const message = `Dear Student, Roll: ${

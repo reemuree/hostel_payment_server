@@ -17,6 +17,10 @@ module.exports = (sequelize) => {
       payment_method: DataTypes.STRING,
       order_id: DataTypes.STRING,
       account_number: DataTypes.STRING,
+      updatedAt: {
+        type: DataTypes.DATE,
+        defaultValue: DataTypes.NOW,
+      },
     },
     {
       sequelize,
