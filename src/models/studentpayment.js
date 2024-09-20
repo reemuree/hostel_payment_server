@@ -12,7 +12,6 @@ module.exports = (sequelize) => {
       studentId: DataTypes.STRING,
       admissionId: DataTypes.INTEGER,
       amount: DataTypes.DECIMAL,
-      amount_details: DataTypes.JSON,
       status: { type: DataTypes.BOOLEAN, defaultValue: false },
       transactionId: DataTypes.STRING,
       payment_method: DataTypes.STRING,
